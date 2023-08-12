@@ -1,0 +1,10 @@
+.center-div {
+    width: 900px; 
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.border-input{
+    border-bottom-width: medium;
+    border-bottom-color: #ffca2c;
+}
