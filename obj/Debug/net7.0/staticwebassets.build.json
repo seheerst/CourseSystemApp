@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5looFxp6OBAjPdH+V+LCGM+r8NeTAPThxILZ0HTvIyw=",
+  "Hash": "gDEJNruIa/1BQnxZhK+qcCu0zJiSPWvkENuxFyFuuQY=",
   "Source": "CourseSystemApp",
   "BasePath": "_content/CourseSystemApp",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\seherst\\Desktop\\CourseSystemApp\\wwwroot\\css\\style.css",
+      "SourceId": "CourseSystemApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\seherst\\Desktop\\CourseSystemApp\\wwwroot\\",
+      "BasePath": "_content/CourseSystemApp",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\seherst\\Desktop\\CourseSystemApp\\wwwroot\\favicon.ico",
