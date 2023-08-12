@@ -1,0 +1,18 @@
+@model Course
+
+<h2>
+    <b> Create Course</b>
+</h2>
+<hr/>
+    <form asp-controller="Course" asp-action="Create" method="post">
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"> Course Title</label>
+            <input asp-for="Title" class="form-control border-input"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"> Course Description</label>
+            <input asp-for="Description" class="form-control border-input"/>
+        </div>
+        <button class="btn btn-outline-warning" type="submit"> Create</button>
+        
+    </form>
