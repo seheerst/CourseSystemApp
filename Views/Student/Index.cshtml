@@ -22,7 +22,7 @@
             <td>@Html.DisplayFor(modelItem => item.Name)</td>
             <td>@Html.DisplayFor(modelItem => item.LastName)</td>
             <td><a href="/Student/Edit/@item.StudentId" class="btn btn-sm btn-outline-warning">Edit</a>
-                <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
+                <a href="/Student/Delete/@item.StudentId"  class="btn btn-sm btn-outline-danger">Delete</a>
             </td>
 
         </tr>

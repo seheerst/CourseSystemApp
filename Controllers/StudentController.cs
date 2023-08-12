@@ -16,9 +16,7 @@ public class StudentController : Controller
         _context = context;
     }
 
-    public async Task<IActionResult> Index()
-
-    {
+    public async Task<IActionResult> Index(){
         var students = await _context.Students.ToListAsync();
         return View(students);
     }
@@ -37,6 +35,7 @@ public class StudentController : Controller
         return RedirectToAction("Index");
     }
 
+    [HttpGet]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
@@ -46,6 +45,57 @@ public class StudentController : Controller
 
         var student = await _context.Students.FindAsync(id);
 
+        if (student == null)
+        {
+            return NotFound();
+        }
+
+        return View(student);
+    }
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id , Student student)
+    {
+        if (id != student.StudentId)
+        {
+            return NotFound();
+        }
+
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                _context.Update(student);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Students.Any(s=> s.StudentId == student.StudentId))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        return View(student);
+
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> Delete(int id)
+    {
+        if (id==null)
+        {
+            return NotFound();
+        }
+
+        var student = await _context.Students.FindAsync(id);
         if (student == null)
         {
             return NotFound();
