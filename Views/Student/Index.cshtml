@@ -1,0 +1,32 @@
+@model IEnumerable<Student>
+
+<h2 style="color: #425288; display: inline; margin-right: 100px"> Student List</h2>
+<a href="/Student/Create" class="btn btn-sm btn-outline-warning">Create Student</a>
+<hr/>
+<div class="center-div">
+<table class="table table-border">
+    <thead>
+    <tr>
+        <th style="width: 70px">@Html.DisplayNameFor(m => m.StudentId)</th>
+        <th style="width: 120px">@Html.DisplayNameFor(m => m.Name)</th>
+        <th style="width: 150px">@Html.DisplayNameFor(m => m.LastName)</th>
+        <th style="width: 150px"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@Html.DisplayFor(modelItem => item.StudentId)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+            <td><a href="" class="btn btn-sm btn-outline-warning">Detail</a>
+                <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
+            </td>
+
+        </tr>
+    }
+    </tbody>
+</table>
+</div>
