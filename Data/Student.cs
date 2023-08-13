@@ -13,6 +13,15 @@ public class Student
     public string? Name { get; set; }
     [DisplayName("Student Last Name")]
     public string? LastName { get; set; }
+
+    public string FullName
+    {
+        get
+        {
+            return this.Name + " "+this.LastName;
+        }
+    }
+
     [DisplayName("Student Email")]
     public string? Email { get; set; }
     [DisplayName("Student Phone")]
