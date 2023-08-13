@@ -1,0 +1,19 @@
+@model CourseSave
+
+<h2 style="color: #425288">Create Course Save</h2>
+<hr/>
+<form asp-controller="CourseSave" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="StudentId" class="form-label  ">Student</label>
+        <select asp-for="StudentId" asp-items="ViewBag.Students" class="form-control border-input">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CourseId" class="form-label border-input">Course</label>
+        <select asp-for="CourseId" asp-items="ViewBag.Courses" class="form-control border-input">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-outline-warning">Create</button>
+</form>
