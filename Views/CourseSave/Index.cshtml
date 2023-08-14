@@ -1,18 +1,33 @@
-@model CourseSave
+@model IEnumerable<CourseSave>
 
-@{
-    Layout = null;
-}
+<h2 style="color: #425288; display: inline; margin-right: 30px"> Registration List</h2>
+<a href="/CourseSave/Create" class="btn btn-sm btn-outline-warning mb-2">Create registration </a>
+<div class="center-div">
+    <table class="table table-border">
+        <thead>
+        <tr>
+            <th style="width: 150px">@Html.DisplayNameFor(c => c.SaveId)</th>
+            <th style="width: 150px">@Html.DisplayNameFor(c => c.Student.FullName)</th>
+            <th style="width: 150px">@Html.DisplayNameFor(c => c.Course.Title)</th>
+            <th style="width: 150px"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.SaveId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Student.FullName)</td>
 
-<!DOCTYPE html>
+                <td>@Html.DisplayFor(modelItem => item.Course.Title)</td>
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
+                <td>
+                    <a href="/CourseSave/Edit/@item.StudentId" class="btn btn-sm btn-outline-warning">Edit</a>
+                    <a href="/CourseSave/Delete/@item.StudentId" class="btn btn-sm btn-outline-danger">Delete</a>
+                </td>
+
+            </tr>
+        }
+        </tbody>
+    </table>
 </div>
-</body>
-</html>
