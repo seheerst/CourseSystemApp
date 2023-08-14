@@ -14,6 +14,7 @@ public class Student
     [DisplayName("Student Last Name")]
     public string? LastName { get; set; }
 
+    [DisplayName("Student Name")]
     public string FullName
     {
         get
@@ -26,4 +27,8 @@ public class Student
     public string? Email { get; set; }
     [DisplayName("Student Phone")]
     public string? Phone { get; set; }
+
+    public ICollection<CourseSave> CourseRegistration  { get; set; } = new List<CourseSave>();
+    
+    
 }

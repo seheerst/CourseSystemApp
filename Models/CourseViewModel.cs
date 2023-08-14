@@ -1,25 +1,27 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using CourseSystemApp.Data;
 
-namespace CourseSystemApp.Data;
+namespace CourseSystemApp.Models;
 
-public class Course
+public class CourseViewModel
 {
     [Key]
     [DisplayName("Course Id")]
     public int CourseId { get; set; }
 
     [DisplayName("Course Name")]
-    public string? Title { get; set; }
+    [Required]
+    public string Title { get; set; }
     
     [DisplayName("Course Description")]
-    public string? Description { get; set; }
+    [Required]
+    public string Description { get; set; }
 
     public ICollection<CourseSave> CourseRegistration { get; set; }= new List<CourseSave>();
     
     public int TeacherId { get; set; }
-
-    public Teacher Teacher { get; set; } = null!;
+    
 
 
 }
