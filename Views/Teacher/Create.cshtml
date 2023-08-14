@@ -1,0 +1,27 @@
+@model Teacher
+
+<h2  style="color: #425288">Create Teacher</h2>
+<hr/>
+<form asp-controller="Teacher" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"> Teacher Name</label>
+        <input asp-for="Name" class="form-control border-input"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label"> Teacher Last Name</label>
+        <input asp-for="LastName" class="form-control border-input"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"> Teacher Phone</label>
+        <input asp-for="Phone" class="form-control border-input"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"> Teacher Email</label>
+        <input asp-for="Email" class="form-control border-input"/>
+    </div>
+       <div class="mb-3">
+            <label asp-for="StartDate" class="form-label"> Start Date</label>
+            <input asp-for="StartDate" class="form-control border-input"/>
+        </div>
+    <button type="submit" class="btn btn-outline-warning"> Create </button>
+</form>
