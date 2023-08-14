@@ -43,7 +43,7 @@ public class StudentController : Controller
             return NotFound();
         }
 
-        var student = await _context.Students.FindAsync(id);
+        var student = await _context.Students.Include(x=>x.CourseRegistration).ThenInclude(x=>x.Course).FirstOrDefaultAsync(x=> x.StudentId== id);
 
         if (student == null)
         {

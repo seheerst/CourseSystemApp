@@ -16,7 +16,8 @@ public class CourseSaveController : Controller
 
     public async Task<IActionResult> Index()
     {
-        return View();
+        var courseRegistration = await _context.CourseSaves.Include(x=>x.Student).Include(x=>x.Course).ToListAsync();
+        return View(courseRegistration);
     }
     
     [HttpGet]
