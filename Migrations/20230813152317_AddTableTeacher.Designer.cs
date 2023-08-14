@@ -3,6 +3,7 @@ using System;
 using CourseSystemApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CourseSystemApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230813152317_AddTableTeacher")]
+    partial class AddTableTeacher
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
@@ -26,7 +29,7 @@ namespace CourseSystemApp.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
@@ -115,10 +118,8 @@ namespace CourseSystemApp.Migrations
             modelBuilder.Entity("CourseSystemApp.Data.Course", b =>
                 {
                     b.HasOne("CourseSystemApp.Data.Teacher", "Teacher")
-                        .WithMany("Courses")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("TeacherId");
 
                     b.Navigation("Teacher");
                 });
@@ -150,11 +151,6 @@ namespace CourseSystemApp.Migrations
             modelBuilder.Entity("CourseSystemApp.Data.Student", b =>
                 {
                     b.Navigation("CourseRegistration");
-                });
-
-            modelBuilder.Entity("CourseSystemApp.Data.Teacher", b =>
-                {
-                    b.Navigation("Courses");
                 });
 #pragma warning restore 612, 618
         }
